@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes,Route } from "react-router-dom";
+import DefineRoute from "./ui/ts/screens/external/DefineRoute.tsx";
+import Auth from "./ui/ts/screens/external/Auth.tsx";
+import Home from "./ui/ts/screens/internal/Home.tsx";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  return <Routes>
+    <Route path="/" element={<DefineRoute/>} />
+    <Route path="/auth" element={<Auth/>}/>
+    <Route path="/home" element={<Home/>}/>
+  </Routes>
 }
-
-export default App;
